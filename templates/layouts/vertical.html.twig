@@ -1,41 +1,41 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" {{ html_attribute ?? '' }}>
 
-    <head>
+<head>
 
-        {{ include('./partials/title-meta.html.twig') }}
+    {{ include('./partials/title-meta.html.twig') }}
 
-        {% block styles %}{% endblock %}
+    {% block styles %}{% endblock %}
 
-        {{ include('./partials/head-css.html.twig') }}
+    {{ include('./partials/head-css.html.twig') }}
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <div class="wrapper">
+<div class="wrapper">
 
-            {{ include('./partials/topbar.html.twig') }}
+    {{ include('./partials/topbar.html.twig') }}
 
-            {{ include('./partials/sidenav.html.twig') }}
+    {{ include('./partials/sidenav.html.twig') }}
 
-            <div class="content-page">
-                <div class="container-fluid">
+    <div class="content-page">
+        <div class="container-fluid">
 
-                    {% block content %}{% endblock %}
+            {% block content %}{% endblock %}
 
-                </div>
-
-                {{ include('./partials/footer.html.twig') }}
-
-            </div>
         </div>
 
-        {{ include('./partials/customizer.html.twig') }}
+        {{ include('./partials/footer.html.twig') }}
 
-        {{ include('./partials/footer-scripts.html.twig') }}
+    </div>
+</div>
 
-        {% block scripts %}{% endblock %}
+{{ include('./partials/customizer.html.twig') }}
 
-    </body>
+{{ include('./partials/footer-scripts.html.twig') }}
+
+{% block scripts %}{% endblock %}
+
+</body>
 </html>
